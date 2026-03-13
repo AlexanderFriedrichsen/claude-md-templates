@@ -1,0 +1,72 @@
+<!-- Keep this file under 100 lines. Move domain details to .claude/rules/ and .claude/skills/. -->
+
+# CLAUDE.md
+
+<!-- WHAT: What is this project? -->
+
+## Project
+
+[PROJECT NAME] is [1 sentence description].
+
+- **Stack**: [language, framework, database]
+- **Package manager**: [pnpm/npm/uv/cargo]
+- **Key directories**: `src/` (source), `tests/` (tests), `docs/` (documentation)
+
+## Commands
+
+- `[test command]` -- run all tests
+- `[test command] [path] -k "name"` -- run single test
+- `[lint command]` -- lint (autofix)
+- `[format command]` -- format
+- `[typecheck command]` -- type check
+- `[build command]` -- build
+
+<!-- WHY: What are the non-obvious constraints? -->
+
+## Constraints
+
+- [e.g., All API keys server-side only]
+- [e.g., No new dependencies without approval]
+- [e.g., Python 3.12+ required, use pathlib for paths]
+- [e.g., Windows-first: PowerShell syntax, no bash-isms]
+
+## Conventions
+
+- Conventional commits: `feat:`, `fix:`, `chore:`, `docs:`, `test:`, `refactor:`
+- Type hints on all function signatures
+- Tests required for all changed logic
+- [e.g., Co-locate tests: foo.py -> foo_test.py]
+
+<!-- HOW: How should Claude work in this repo? -->
+
+## Workflow
+
+1. **Plan first.** Use `/plan-and-review` for non-trivial tasks.
+2. **Verify.** Run tests after every change. No "done" until green.
+3. **Small diffs.** Touch only what's needed. No drive-by refactors.
+4. **Learn from mistakes.** When corrected, add the lesson below.
+
+## Do Not
+
+- Commit to `main` directly
+- Add dependencies without flagging
+- Use `os.system()` -- use `subprocess.run()`
+- Skip failing tests silently
+
+## MCP Tools
+
+- [Tool]: [when to use it]
+
+## Tips
+
+- **Parallel sessions**: Use separate git worktrees (`git worktree add`) for
+  running multiple Claude sessions on different tasks simultaneously.
+- **Plan Mode default**: Start most sessions in Plan Mode (Shift+Tab x2).
+  Only switch to implementation after the plan is approved.
+- **MCP token cost**: Only enable MCP servers you actively use -- each adds
+  to context overhead. Disable unused servers with `/mcp`.
+
+## Lessons Learned
+
+<!-- Add hard-won lessons here as they arise. This is institutional memory. -->
+<!-- Example: "2024-12-15: Don't use datetime.now() in tests -- use freezegun" -->
