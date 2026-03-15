@@ -4,23 +4,20 @@ A reusable `.claude/` configuration template for autonomous agentic development 
 
 ## Quick Start
 
-1. Copy the contents of this folder into your project root:
+1. **Recommended: Use the setup command.** Open Claude Code in this template repo and run:
    ```
-   cp -r claude-code-template/.claude /path/to/your-project/
-   cp claude-code-template/CLAUDE.md.template /path/to/your-project/CLAUDE.md
+   /setup /path/to/your-project
    ```
+   This interactively copies the template, fills in your project details, and configures rules/agents for your stack.
 
-2. Edit `CLAUDE.md` — fill in every `[PLACEHOLDER]` section with your project specifics.
-
-3. Edit `.claude/rules/platform.md` — uncomment the section for your OS, delete the others.
-
-4. Edit `.claude/rules/testing.md` — adjust the "What to Test" and "What NOT to Test" sections for your domain.
-
-5. Edit `.claude/agents/staff-engineer.md` — add project-specific review criteria under the `[PROJECT-SPECIFIC]` markers. Also check `testing.md` for `[PROJECT-SPECIFIC]` sections.
-
-6. Add domain skills in `.claude/skills/` — copy `_example-skill.md` and fill in your domain knowledge. Delete the example when done.
-
-7. Set up hooks. See `.claude/hooks/HOOKS_GUIDE.md` for examples, then create `.claude/settings.json` with your hook configuration.
+2. **Or set up manually:**
+   - Copy `.claude/` and `CLAUDE.md.template` into your project
+   - Rename `CLAUDE.md.template` to `CLAUDE.md` and fill in every `[PLACEHOLDER]`
+   - Edit `.claude/rules/platform.md` for your OS
+   - Edit `.claude/rules/testing.md` for your test framework
+   - Edit `.claude/agents/staff-engineer.md` — add review criteria under `[PROJECT-SPECIFIC]` markers
+   - Add domain skills in `.claude/skills/` (copy `_example-skill.md` as a starting point)
+   - Set up hooks per `.claude/hooks/HOOKS_GUIDE.md`
 
 ## What's Included
 
@@ -41,6 +38,7 @@ This creates a self-correcting development loop that catches architectural issue
 
 | Command | Purpose |
 |---|---|
+| `/setup <target-dir>` | Interactive setup wizard — copies template into a new project and customizes it |
 | `/plan-and-review <task>` | Full plan → review → implement → verify cycle |
 | `/tdd <feature>` | Write failing tests first, then implement |
 | `/commit-push` | Stage, commit with conventional message, push |
@@ -129,6 +127,7 @@ Create `.claude/settings.json` with a `hooks` key. See `hooks/HOOKS_GUIDE.md` fo
 │   ├── plan-and-review.md      # Core agentic workflow
 │   ├── ralph-loop.md           # Autonomous loop iteration
 │   ├── research.md             # Research workflow
+│   ├── setup.md                # Interactive project setup wizard
 │   └── tdd.md                  # Test-driven development
 ├── hooks/
 │   └── HOOKS_GUIDE.md          # Hook config (command + prompt hooks)
@@ -144,4 +143,5 @@ Create `.claude/settings.json` with a `hooks` key. See `hooks/HOOKS_GUIDE.md` fo
 ├── skills/
 │   └── _example-skill.md       # Skill template (delete after use)
 CLAUDE.md.template              # Project instructions (rename to CLAUDE.md)
+MEMORY.md.template              # Auto-memory structure reference (not committed to projects)
 ```

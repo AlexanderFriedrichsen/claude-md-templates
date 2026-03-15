@@ -1,0 +1,29 @@
+# Project Memory
+
+<!-- This file is auto-managed by Claude Code at ~/.claude/projects/<project>/memory/MEMORY.md -->
+<!-- It is NOT committed to git — it lives in Claude's per-user project memory directory. -->
+<!-- The /setup command will tell you where this file lives for your project. -->
+<!-- Keep under 200 lines — only the first 200 are loaded into context. -->
+
+## Project Status
+[One-line summary of current project state]
+
+## What's Built
+- [Feature/system 1]
+- [Feature/system 2]
+
+## Key Architecture Decisions
+- [YYYY-MM-DD]: [Decision and rationale]
+
+## Patterns
+- [Recurring pattern or convention discovered during work]
+
+## Gotchas
+- [Hard-won lesson or non-obvious behavior]
+
+## Immediate Next Steps
+1. [Next priority]
+2. [Following priority]
+
+## Conventions
+- [Convention not already in CLAUDE.md or rules files]
